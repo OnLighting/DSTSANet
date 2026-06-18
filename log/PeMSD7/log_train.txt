@@ -1,0 +1,3 @@
+=================== Training Start ===================
+{'seed': 1, 'batch_size': 32, 'max_epoch': 200, 'learning_rate': 0.001, 'patience': 25, 'input_len': 12, 'output_len': 12, 'train_ratio': 0.6, 'val_ratio': 0.2, 'test_ratio': 0.2, 'steps_per_day': 288, 'dims': 16, 'heads': 8, 'layers': 2, 'sample': 1, 'wave': 'db2', 'levels': 1, 'lambda_pred': 1.0, 'lambda_aux': 0.4, 'lambda_rec': 0.05, 'traffic_file': './data/PeMSD7/PeMSD7.npz', 'adj_file': './data/PeMSD7/adj.npy', 'tem_adj_file': './data/PeMSD7/tem_adj.npy', 'model_file': './models/PeMSD7/PeMSD7.pth', 'log_file': './log/PeMSD7/log_train.txt'}
+====================== Data ======================
