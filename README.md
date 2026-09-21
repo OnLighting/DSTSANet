@@ -1,6 +1,8 @@
 # DSTSANet
 DSTSANet: A Decoupled Spatio-Temporal Sparse Attention Adaptive Network for Traffic Flow Forecasting
 
+![Structure](structure_13.pdf)
+
 ## Ablation: Frequency-Branch Encoder Sharing
 
 The default DSTSANet applies **different temporal encoders** to the two frequency
