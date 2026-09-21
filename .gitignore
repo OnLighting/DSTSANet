@@ -15,7 +15,8 @@ dist-ssr/
 target/
 *.class
 *.log
-
+log/
+work_dirs/
 # === Python 相关 ===
 __pycache__/
 *.py[cod]

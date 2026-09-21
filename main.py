@@ -59,7 +59,8 @@ class Solver(object):
             self.config['heads'], self.config['dims'], self.config['layers'],
             self.config['sample'], self.config['levels'], self.localadj,
             self.spawave, self.temwave, self.config['input_len'],
-            self.config['output_len']
+            self.config['output_len'],
+            ablation=self.config.get('ablation', 'none')
         ).to(self.device)
 
         self.optimizer = torch.optim.Adam(
@@ -269,6 +270,13 @@ def parse_args():
     parser.add_argument('--wave', type=str, default='db2', help='Wavelet type')
     parser.add_argument('--levels', type=int, default=1, help='Wavelet levels')
 
+    parser.add_argument('--ablation', type=str, default='none',
+                        choices=['none', 'attn_shared', 'conv_shared'],
+                        help='Ablation mode for encoder: '
+                             'none (default DSTSANet), '
+                             'attn_shared (both branches use Temporal Attention), '
+                             'conv_shared (both branches use Temporal Conv)')
+
     parser.add_argument('--lambda_pred', type=float, default=1.0, help='Weight for prediction loss')
     parser.add_argument('--lambda_aux', type=float, default=0.4, help='Weight for auxiliary loss')
     parser.add_argument('--lambda_rec', type=float, default=0.05, help='Weight for reconstruction loss')
@@ -277,7 +285,7 @@ def parse_args():
     parser.add_argument('--adj_file', type=str, default='./data/PeMS07/adj.npy', help='Adjacency matrix file path')
     parser.add_argument('--tem_adj_file', type=str, default='./data/PeMS07/tem_adj.npy',
                         help='Temporal adjacency matrix file path')
-    parser.add_argument('--model_file', type=str, default='./models/PeMS07/PeMSD7.pth', help='Path to save the model')
+    parser.add_argument('--model_file', type=str, default='./work_dirs/PeMS07/PeMSD7.pth', help='Path to save the model')
     parser.add_argument('--log_file', type=str, default='./log/PeMS07/log_train.txt', help='Log file path')
     return parser.parse_args()
 
