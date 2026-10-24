@@ -1,5 +1,7 @@
 # DSTSANet
-DSTSANet: A Decoupled Spatio-Temporal Sparse Attention Adaptive Network for Traffic Flow Forecasting
+DSTSANet for Frequency-Decoupled Traffic Forecasting with Context-Conditioned Spectral Modulation and Sparse Attention
+
+DSTSANet stands for Decoupled Spatio-Temporal Sparse Attention Adaptive Network.
 
 ![Structure](structure_13.pdf)
 
